@@ -1,4 +1,4 @@
-package com.cricket.wc2019;
+package com.cricket.wc2019.Controllers;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
