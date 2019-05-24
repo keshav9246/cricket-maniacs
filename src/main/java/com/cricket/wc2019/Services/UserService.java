@@ -1,6 +1,7 @@
 package com.cricket.wc2019.Services;
 
 import com.cricket.wc2019.Models.Users;
+import com.cricket.wc2019.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

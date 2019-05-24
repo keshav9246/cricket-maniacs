@@ -16,7 +16,7 @@ public class Users {
     private String name;
     private String password;
     private boolean admin;
-    private int score;
+
 
     public String getUserid() {
         return userid;
@@ -34,13 +34,7 @@ public class Users {
         this.admin = admin;
     }
 
-    public int getScore() {
-        return score;
-    }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
 
     public String getName() {
         return name;

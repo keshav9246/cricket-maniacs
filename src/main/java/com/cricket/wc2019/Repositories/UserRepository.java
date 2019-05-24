@@ -1,4 +1,4 @@
-package com.cricket.wc2019.Services;
+package com.cricket.wc2019.Repositories;
 
 import com.cricket.wc2019.Models.Users;
 import org.springframework.data.repository.CrudRepository;
