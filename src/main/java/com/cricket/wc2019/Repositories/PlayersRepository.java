@@ -12,11 +12,11 @@ import java.util.List;
 @Repository
 public interface PlayersRepository extends CrudRepository<Player, String> {
 
-    @Query("Select p from Player p WHERE p.teamname = ?1")
-    public List<Player> fetchTeam(String teamName);
+  //  @Query("Select p from Players p WHERE p.teamName = ?1")
+    public List<Player> findByTeamname(String teamname);
 
     @Modifying @Transactional
-   @Query(value = "Update Player p  set p.playerScore = p.playerScore + ?1 where p.playerName = ?2", nativeQuery = true)
+   @Query(value = "Update Players p  set p.playerScore = p.playerScore + ?1 where p.playerName = ?2", nativeQuery = true)
    public void savePlayerScore(int score, String playerName);
 
 }

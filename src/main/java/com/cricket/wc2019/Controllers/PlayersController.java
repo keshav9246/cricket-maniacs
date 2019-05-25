@@ -13,12 +13,12 @@ public class PlayersController {
 
 
     @Autowired
-    private PlayerService service;
+    private PlayerService pService;
 
     @RequestMapping(value = "/team", method = RequestMethod.POST)
     public List<Player> getTeam(@RequestHeader String teamName)
     {
-        List<Player> team = service.fetchTeam(teamName);
+        List<Player> team = pService.fetchTeam(teamName);
         return team;
 
     }

@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 @Component
+@Table(name = "Players")
 public class Player {
 
 

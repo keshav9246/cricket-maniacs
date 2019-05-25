@@ -12,21 +12,21 @@ import java.util.List;
 public class PlayerService{
 
     @Autowired
-    private PlayersRepository repoInstance;
+    private PlayersRepository repo;
 
 
 
     public List<Player> fetchTeam(String country){
 
         List<Player> team = new ArrayList<>();
-        team = repoInstance.fetchTeam(country);
+        team = repo.findByTeamname(country);
         return team;
     }
 
 
     public void addPlayerScore(int score, String playerName)
     {
-        repoInstance.savePlayerScore(score, playerName);
+        repo.savePlayerScore(score, playerName);
     }
 
 

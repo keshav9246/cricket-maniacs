@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Component
+@Table(name = "maniacs")
 public class Maniac {
 
     @Id
