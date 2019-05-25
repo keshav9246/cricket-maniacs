@@ -2,10 +2,8 @@ package com.cricket.wc2019.Models;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Component
@@ -13,6 +11,7 @@ public class Player {
 
 
     @Id
+
     private String playername;
     //private enum playerRole{Opener,MiddleOrder,WicketKeeper,Spinner,FastBowler,AllRounder};
     private String playerrole;
@@ -20,6 +19,10 @@ public class Player {
     private boolean iscaptain;
     //private enum teamName{INDIA,ENGLAND,AUSTRALIA,SOUTHAFRICA,NEWZELAND,SRILANKA, AFGHANISTAN,BANGLADESH, PAKISTAN,WESTINDIES};
     private String teamname;
+
+
+
+
 
     public String getPlayername() {
         return playername;

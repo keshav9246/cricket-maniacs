@@ -16,11 +16,17 @@ public class PlayerService{
 
 
 
-    public List<Player> fetchTeam(String teamName){
+    public List<Player> fetchTeam(String country){
 
         List<Player> team = new ArrayList<>();
-        team = repoInstance.fetchTeam(teamName);
+        team = repoInstance.fetchTeam(country);
         return team;
+    }
+
+
+    public void addPlayerScore(int score, String playerName)
+    {
+        repoInstance.savePlayerScore(score, playerName);
     }
 
 
