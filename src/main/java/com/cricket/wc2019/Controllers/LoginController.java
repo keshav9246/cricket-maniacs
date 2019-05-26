@@ -41,6 +41,13 @@ public class LoginController {
     }
 
 
+    @RequestMapping("/addManiac")
+    public void addUser(@RequestHeader String userID,@RequestHeader String name,@RequestHeader String pwd,@RequestHeader boolean isAdmin)
+    {
+        service.addManiac(userID, name, pwd, isAdmin);
+    }
+
+
 
 
 }

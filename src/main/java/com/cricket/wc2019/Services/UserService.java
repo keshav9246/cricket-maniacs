@@ -16,6 +16,9 @@ public class UserService {
     @Autowired
     private UserRepository userInstance;
 
+    @Autowired
+    Users user;
+
     public Users getUser(String username)
     {
         return userInstance.findById(username).orElse(null);
@@ -34,6 +37,16 @@ public class UserService {
     {
         return userInstance.findAll();
     }
+
+    public void addManiac(String userID, String name, String pwd, boolean isAdmin)
+    {
+        user.setUserid(userID);
+        user.setName(name);
+        user.setPassword(pwd);
+        user.setAdmin(isAdmin);
+        userInstance.save(user);
+    }
+
 }
 
 
