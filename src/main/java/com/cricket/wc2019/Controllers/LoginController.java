@@ -35,28 +35,33 @@ public class LoginController {
     @PostMapping(value = "/authenticate")
     public ModelAndView authenticateUser( @RequestParam("userid") String userid, @RequestParam("password") String password)
     {
-    	boolean result =false;
+    	
         user = service.getUser(userid);
         
         maniac = mService.getManiacScore(user.getName());
         
         friends = mService.getAllManiacs();
         
-     
-       
-       
-       
-        
+      
 
         if(user.getPassword().equals(password))
         {
-            result =  true;
+            if(user.isAdmin() == true)
+            {
+            	 ModelAndView model = new ModelAndView("admin", "user", user);
+                 
+ 	            model.addObject("maniac", maniac);
+ 	            model.addObject("friends", friends);
+ 	            return model;
+            }
+            else
+            {
             ModelAndView model = new ModelAndView("welcome", "user", user);
            
 	            model.addObject("maniac", maniac);
 	            model.addObject("friends", friends);
 	            return model;
-         
+            }
         }
         else
         {

@@ -41,7 +41,8 @@ public class ManiacService {
     {
     	
        friends = (List<Maniac>) repoInstance.findAll();
-       System.out.println(friends.get(0).getManiac_name()+ " here i print the anme" );
+       
+      
        return friends;
     }
     
