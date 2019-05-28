@@ -18,7 +18,9 @@ public class ManiacService {
     @Autowired
     Maniac team;
 
-
+    @Autowired
+    List<Maniac> friends;
+    
     public void submitTeam(List<Player> players, String orange, String purple, String maniac)
     {
 
@@ -34,11 +36,29 @@ public class ManiacService {
 
 
     }
+    
+    public List<Maniac> getAllManiacs()
+    {
+    	
+       friends = (List<Maniac>) repoInstance.findAll();
+       System.out.println(friends.get(0).getManiac_name()+ " here i print the anme" );
+       return friends;
+    }
+    
+    
 
     public Maniac getManiacTeam( String ManiacName)
     {
         return repoInstance.findById(ManiacName).orElse(null);
     }
+    
+    
+    public Maniac getManiacScore( String ManiacName)
+    {
+        team = repoInstance.findById(ManiacName).orElse(null);
+        return team;
+    }
+
 
     //update total score for maniac
 

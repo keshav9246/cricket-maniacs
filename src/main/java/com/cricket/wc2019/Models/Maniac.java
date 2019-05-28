@@ -4,6 +4,8 @@ import org.hibernate.annotations.Formula;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+
+import java.util.Comparator;
 import java.util.List;
 
 @Entity
@@ -17,6 +19,7 @@ public class Maniac {
 
 
     private int total_score;
+    
     @ManyToMany
     private List<Player> team;
     private String orange_cap;
@@ -78,4 +81,5 @@ public class Maniac {
 
 
     }
+    
 }
