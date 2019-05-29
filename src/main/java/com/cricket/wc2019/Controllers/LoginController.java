@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class LoginController {
 
     @Autowired
@@ -86,10 +86,10 @@ public class LoginController {
 
 
     @RequestMapping("/addManiac")
-    public void addUser(@RequestParam("userid") String userID,@RequestParam("name") String name,@RequestParam("password") String pwd,@RequestParam("isAdmin") boolean isAdmin)
+    public String addUser(@RequestParam("userid") String userID,@RequestParam("name") String name,@RequestParam("password") String pwd,@RequestParam("isAdmin") boolean isAdmin)
     {
         service.addManiac(userID, name, pwd, isAdmin);
-        //return("admin");
+        return("admin");
         
         
     }
