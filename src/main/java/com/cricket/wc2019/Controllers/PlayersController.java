@@ -22,8 +22,8 @@ public class PlayersController {
     {
         List<Player> team = pService.fetchTeam(teamname);
         System.out.println(team.get(0).getPlayername());
-        ModelAndView model = new ModelAndView("selectSquad", "team", team);
-        model.addObject("team", team);
+        ModelAndView model = new ModelAndView("admin", "team", team);
+        //model.addObject("team", team);
         return model;
 
     }

@@ -10,17 +10,17 @@
 <div class = "root">
 <h2 align = "center"> Welcome to my page </h2>
 
-<h2 align = "center" yalign = "center"> Please enter your credentials to sign in </h2>
+<h2 align = "center" > Please enter your credentials to sign in </h2>
 
-<form align = "center" action ="/authenticate" method = "Post">
-<label>Username :  </label>
+<form  action ="/authenticate" method = "Post">
+<label>User-name :  </label>
 <input type = "text" id = "userid" name = "userid"/>
 
 <label>Password :  </label>
-<input type = "text" id = "userid" name = "password"/>
+<input type = "password" id = "password" name = "password"/>
 
 
-<input type = "submit" id = "userid"/>
+<input type = "submit"/>
 </form>
 
 

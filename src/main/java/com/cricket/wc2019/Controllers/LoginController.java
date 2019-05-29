@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class LoginController {
 
     @Autowired
@@ -42,50 +42,56 @@ public class LoginController {
         
         friends = mService.getAllManiacs();
         
+        ModelAndView model = null;
       
 
         if(user.getPassword().equals(password))
         {
             if(user.isAdmin() == true)
             {
-            	 ModelAndView model = new ModelAndView("admin", "user", user);
+            	  model = new ModelAndView("admin", "user", user);
                  
  	            model.addObject("maniac", maniac);
  	            model.addObject("friends", friends);
- 	            return model;
+ 	           
             }
             else
             {
-            ModelAndView model = new ModelAndView("welcome", "user", user);
+             model = new ModelAndView("welcome", "user", user);
            
 	            model.addObject("maniac", maniac);
 	            model.addObject("friends", friends);
-	            return model;
+	           
             }
         }
-        else
-        {
-        	  ModelAndView model = new ModelAndView("test", "user", user);
-              return model;
-            
-        }
+//        }
+//        else
+//        {
+//        	  ModelAndView model = new ModelAndView("test", "user", user);
+//              return model;
+//            
+//        }
+		return model;
         
         
     }
 
-    @RequestMapping("/users")
-    public String getAllUsers(Model model)
-    {
-        List<Users> users = service.getUsers();
-        model.addAttribute("users", users);
-        return "test";
-    }
+//    @RequestMapping("/users")
+//    public String getAllUsers(Model model)
+//    {
+//        List<Users> users = service.getUsers();
+//        model.addAttribute("users", users);
+//        return "test";
+//    }
 
 
     @RequestMapping("/addManiac")
-    public void addUser(@RequestParam String userID,@RequestParam String name,@RequestParam String pwd,@RequestParam boolean isAdmin)
+    public String addUser(@RequestParam("userid") String userID,@RequestParam("name") String name,@RequestParam("password") String pwd,@RequestParam("isAdmin") boolean isAdmin)
     {
         service.addManiac(userID, name, pwd, isAdmin);
+        return("admin");
+        
+        
     }
 
     @GetMapping("/welome")

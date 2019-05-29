@@ -14,7 +14,7 @@ public class ScoresService {
     @Autowired
     ScoresRepository repo;
 
-    public int updateScores(int runs, int balls, boolean isNotOut, int wickets, float economy, int catches, boolean isWK, int directHits, String playerName)
+    public int updateScores(int runs, int balls, boolean isNotOut, int wickets, float economy, int catches, String role, int directHits, String playerName, boolean isCaptain)
     {
         int batting_bonus = 0;
         int bowling_bonus = 0;
@@ -25,9 +25,9 @@ public class ScoresService {
         float strikeRate = (runs*100)/balls;
         int totalBowlingPoints = 0;
         int totalFieldingPoints = 0;
+        int totalMatchScore = 0;
 
         individualScore.setPlayer_name(playerName);
-
         individualScore.setRuns(runs);
         individualScore.setBalls(balls);
         individualScore.setStrike_rate(strikeRate);
@@ -39,23 +39,32 @@ public class ScoresService {
             batting_bonus -= 15;
         }
 
-        else {
+       
             // +25 for not outs
             if (isNotOut == true) {
                 batting_bonus += 25;
             }
 
-
             // +5 for 50 each and +25 for SR > 125
-            if (runs >= 50) {
-                batting_bonus += ((runs / 50) * 5);
-
-                if (strikeRate >= 125) {
-                    batting_bonus += 15;
-                }
-
+            if (runs >= 50 && runs <100) {
+                batting_bonus += 5;
             }
-        }
+            else if(runs >= 100 && runs <150) {
+                batting_bonus += 10;
+            }
+            else if(runs >= 150 && runs <200) {
+                batting_bonus += 20;
+            }
+            else if(runs >= 200 && runs <250) {
+                batting_bonus += 30;
+            }
+            else if(runs > 250) {
+                batting_bonus += 50;
+            }
+        
+            if (strikeRate >= 125 && runs >= 45) {
+                batting_bonus += 15;
+            }
 
         totalBattingPoints = runs + batting_bonus;
 
@@ -75,7 +84,7 @@ public class ScoresService {
         }
         else if(economy > 9.0)
         {
-            bowling_bonus -= 20;
+            bowling_bonus -= 25;
         }
         else if(economy > 8.0)
         {
@@ -83,7 +92,7 @@ public class ScoresService {
         }
         else if(economy > 7.0)
         {
-            bowling_bonus -= 20;
+            bowling_bonus -= 10;
         }
 
         if(wickets > 0)
@@ -97,9 +106,9 @@ public class ScoresService {
         individualScore.setCatches(catches);
         individualScore.setDirect_hit(directHits);
 
-        if(isWK == true)
+        if(role.contentEquals("Wicketkeeper"))
         {
-            catchPoints = catches * 6;
+            catchPoints = catches * 7;
         }
         else
         {
@@ -110,19 +119,25 @@ public class ScoresService {
 
         totalFieldingPoints = catchPoints + directHitPoints;
         individualScore.setFielding_points(totalFieldingPoints);
-        individualScore.setTotal_match_score(totalBattingPoints + totalBowlingPoints + totalFieldingPoints);
+        
+        totalMatchScore = totalBattingPoints + totalBowlingPoints + totalFieldingPoints;
+        
+        if(isCaptain == true)
+        {
+        	totalMatchScore *= 1.5;
+        }
+        
+        individualScore.setTotal_match_score(totalMatchScore);
 
 
 
 
         repo.save(individualScore);
 
+        System.out.print(individualScore.getTotal_match_score());
         return individualScore.getTotal_match_score();
 
-
-
-
-
-
     }
+    
+    
 }
