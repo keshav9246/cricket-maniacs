@@ -8,11 +8,11 @@ import javax.persistence.*;
 @Component
 public class Scores {
 
-    @Id()
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "score_id", updatable = false, nullable = false)
     private int score_id;
     private String player_name;
-
     private int runs;
     private int balls;
     private float strike_rate;

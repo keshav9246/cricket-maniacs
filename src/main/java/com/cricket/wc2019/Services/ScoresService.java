@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 public class ScoresService {
 
     @Autowired
-    Scores individualScore;
+    private Scores individualScore;
 
     @Autowired
-    ScoresRepository repo;
+    private ScoresRepository repo;
 
-    public int updateScores(int runs, int balls, boolean isNotOut, int wickets, float economy, int catches, String role, int directHits, String playerName, boolean isCaptain)
+    public Scores updateScores(int runs, int balls, boolean isNotOut, int wickets, float economy, int catches, String role, int directHits, String playerName, boolean isCaptain)
     {
         int batting_bonus = 0;
         int bowling_bonus = 0;
@@ -131,12 +131,10 @@ public class ScoresService {
         individualScore.setTotal_match_score(totalMatchScore);
 
 
-
-
         repo.save(individualScore);
 
         System.out.print(individualScore.getTotal_match_score());
-        return individualScore.getTotal_match_score();
+        return individualScore;
 
     }
     

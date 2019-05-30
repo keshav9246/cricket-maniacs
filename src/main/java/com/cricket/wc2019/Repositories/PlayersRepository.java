@@ -15,9 +15,8 @@ public interface PlayersRepository extends CrudRepository<Player, String> {
   //  @Query("Select p from Players p WHERE p.teamName = ?1")
     public List<Player> findByTeamname(String teamname);
 
-   @Modifying 
-   @Transactional
-   @Query(value = "Update Players  set playerscore = playerscore + ?1 where playername = ?2", nativeQuery = true)
+   @Modifying
+   @Query(value = "Update Players p set p.playerscore = p.playerscore + ?1 where p.playername = ?2", nativeQuery = true)
    public void savePlayerScore(int score, String playername);
 
 }
