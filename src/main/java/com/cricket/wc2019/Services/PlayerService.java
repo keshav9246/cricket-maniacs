@@ -26,8 +26,9 @@ public class PlayerService{
 
     public void addPlayerScore(int score, String playername)
     {
-    	System.out.println("Inside servie> about to update player" +playername);
+    	System.out.println("Inside servie> about to update player " +playername);
         repo.savePlayerScore(score, playername);
+        System.out.println("Executed service for " +playername);
     }
 
 

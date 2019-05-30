@@ -44,21 +44,22 @@ public class ScoresController {
 
             try {
                 score= service.updateScores(runs, balls, isNotOut, wickets, economy, catches, role, directHits,playername, isCaptain);
-                score.getScore_id();
-                score.getBalls();
-                score.getRuns();
-                score.getCatches();
-                score.getEconomy();
-                score.getDirect_hit();
-                score.isIs_notout();
-                score.getPlayer_name();
-                score.getTotal_match_score();
-                score.getBatting_points();
-                score.getBowling_points();
-                score.getFielding_points();
-                score.getStrike_rate();
-                score.getWickets();
-                pService.addPlayerScore(totalMatchScore, playername);
+
+
+                pService.addPlayerScore(score.getTotal_match_score(), playername);
+//                score.getBalls();
+//                score.getRuns();
+//                score.getCatches();
+//                score.getEconomy();
+//                score.getDirect_hit();
+//                score.isIs_notout();
+//                score.getPlayer_name();
+//                score.getTotal_match_score();
+//                score.getBatting_points();
+//                score.getBowling_points();
+//                score.getFielding_points();
+//                score.getStrike_rate();
+//                score.getWickets();
             }
             catch (Exception e)
             {

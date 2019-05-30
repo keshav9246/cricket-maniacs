@@ -15,9 +15,6 @@ public class Maniac {
 
     @Id
     private String maniac_name;
-
-
-
     private int total_score;
     
     @ManyToMany

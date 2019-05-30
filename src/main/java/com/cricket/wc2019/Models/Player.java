@@ -12,7 +12,6 @@ public class Player {
 
 
     @Id
-
     private String playername;
     //private enum playerRole{Opener,MiddleOrder,WicketKeeper,Spinner,FastBowler,AllRounder};
     private String playerrole;

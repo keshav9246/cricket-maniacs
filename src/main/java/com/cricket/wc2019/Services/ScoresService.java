@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ScoresService {
 
+    public int id = 101;
+
     @Autowired
     private Scores individualScore;
 
@@ -27,11 +29,14 @@ public class ScoresService {
         int totalFieldingPoints = 0;
         int totalMatchScore = 0;
 
+        individualScore.setScore_id(++id);
         individualScore.setPlayer_name(playerName);
         individualScore.setRuns(runs);
         individualScore.setBalls(balls);
         individualScore.setStrike_rate(strikeRate);
         individualScore.setIs_notout(isNotOut);
+
+
 
         // -15 if batsman get out on 0
         if(runs == 0 && isNotOut == false)
@@ -41,7 +46,7 @@ public class ScoresService {
 
        
             // +25 for not outs
-            if (isNotOut == true) {
+            if (isNotOut == true && balls >= 20) {
                 batting_bonus += 25;
             }
 
@@ -133,7 +138,10 @@ public class ScoresService {
 
         repo.save(individualScore);
 
+
+
         System.out.print(individualScore.getTotal_match_score());
+        System.out.print(individualScore.getScore_id() + "This is the IDDdddddddDd");
         return individualScore;
 
     }

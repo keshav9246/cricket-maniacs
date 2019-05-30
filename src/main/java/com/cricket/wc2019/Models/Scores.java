@@ -6,12 +6,14 @@ import javax.persistence.*;
 
 @Entity
 @Component
+
 public class Scores {
 
     @Id
+
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "score_id", updatable = false, nullable = false)
-    private int score_id;
+    private Integer score_id;
     private String player_name;
     private int runs;
     private int balls;
@@ -26,11 +28,11 @@ public class Scores {
     private int fielding_points;
     private int total_match_score;
 
-    public int getScore_id() {
+    public Integer getScore_id() {
         return score_id;
     }
 
-    public void setScore_id(int score_id) {
+    public void setScore_id(Integer score_id) {
         this.score_id = score_id;
     }
 
