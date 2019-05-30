@@ -74,9 +74,15 @@ public class Maniac {
     @PostLoad
     public void calculateTotalScore()
     {
-        this.total_score = 0;
+
+
         for (Player p: this.team) {
+
             this.total_score += p.getPlayerscore();
+
+        System.out.println ("Calculated");
+
+
         }
 
 

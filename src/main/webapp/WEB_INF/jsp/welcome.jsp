@@ -15,13 +15,13 @@
 </head>
 <body>
 
-<c:set var="playerName" scope="session" value="${maniac.team[0].playername}"/>  
-<c:set var="user" scope="session" value="${user}"/> 
-<c:if test="${playerName == null}">  
-   <jsp:forward page="selectSquad.jsp" >
-   	<jsp:param name="userid" value="${user}" />  
-   </jsp:forward>    
-</c:if> 
+<%--<c:set var="playerName" scope="session" value="${maniac.team[0].playername}"/>  --%>
+<%--<c:set var="user" scope="session" value="${user}"/> --%>
+<%--<c:if test="${playerName == null}">  --%>
+<%--   <jsp:forward page="selectSquad.jsp" >--%>
+<%--   	<jsp:param name="userid" value="${user}" />  --%>
+<%--   </jsp:forward>    --%>
+<%--</c:if> --%>
 
 <div id = "root">
 WELCOME ${user.name} 

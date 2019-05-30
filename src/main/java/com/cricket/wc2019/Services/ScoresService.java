@@ -124,6 +124,7 @@ public class ScoresService {
         
         if(isCaptain == true)
         {
+            System.out.println("inside gvhgvhgv");
         	totalMatchScore *= 1.5;
         }
         
