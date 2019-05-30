@@ -42,7 +42,7 @@ public class ScoresController {
 
 
 
-            try {
+
                 score= service.updateScores(runs, balls, isNotOut, wickets, economy, catches, role, directHits,playername, isCaptain);
 
 
@@ -60,11 +60,7 @@ public class ScoresController {
 //                score.getFielding_points();
 //                score.getStrike_rate();
 //                score.getWickets();
-            }
-            catch (Exception e)
-            {
 
-            }
         ModelAndView mv = new ModelAndView("admin", "score", score);
             return mv;
 
