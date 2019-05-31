@@ -3,17 +3,21 @@ package com.cricket.wc2019.Models;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Component
-
 public class Scores {
 
     @Id
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="seq_id", sequenceName="seq_id", allocationSize=5)
+    @GeneratedValue(strategy=GenerationType.IDENTITY, generator="seq_id")
     @Column(name = "score_id", updatable = false, nullable = false)
     private Integer score_id;
+
+
+
+
     private String player_name;
     private int runs;
     private int balls;

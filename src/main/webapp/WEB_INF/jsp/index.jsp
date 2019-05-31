@@ -7,7 +7,7 @@
 <title>Cricket - Maniac</title>
 </head>
 <body>
-<div class = "root">
+<div class = "root" align="center">
 <h2 align = "center"> Welcome to my page </h2>
 
 <h2 align = "center" > Please enter your credentials to sign in </h2>
@@ -19,8 +19,8 @@
 <label>Password :  </label>
 <input type = "password" id = "password" name = "password"/>
 
-
-<input type = "submit"/>
+<br> <br>
+<input type = "submit" value = "Login"/>
 </form>
 
 

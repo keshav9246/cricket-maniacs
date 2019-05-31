@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ScoresService {
 
-    public int id = 101;
+
 
     @Autowired
     private Scores individualScore;
@@ -29,7 +29,7 @@ public class ScoresService {
         int totalFieldingPoints = 0;
         int totalMatchScore = 0;
 
-        individualScore.setScore_id(++id);
+
         individualScore.setPlayer_name(playerName);
         individualScore.setRuns(runs);
         individualScore.setBalls(balls);
@@ -46,7 +46,7 @@ public class ScoresService {
 
        
             // +25 for not outs
-            if (isNotOut == true && balls >= 20) {
+            if (isNotOut == true && balls >= 24) {
                 batting_bonus += 25;
             }
 
@@ -55,7 +55,7 @@ public class ScoresService {
                 batting_bonus += 5;
             }
             else if(runs >= 100 && runs <150) {
-                batting_bonus += 10;
+                batting_bonus += 12;
             }
             else if(runs >= 150 && runs <200) {
                 batting_bonus += 20;
@@ -63,7 +63,7 @@ public class ScoresService {
             else if(runs >= 200 && runs <250) {
                 batting_bonus += 30;
             }
-            else if(runs > 250) {
+            else if(runs >= 250) {
                 batting_bonus += 50;
             }
         
