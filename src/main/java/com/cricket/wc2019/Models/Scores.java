@@ -10,8 +10,7 @@ import javax.validation.constraints.NotNull;
 public class Scores {
 
     @Id
-    @SequenceGenerator(name="seq_id", sequenceName="seq_id", allocationSize=5)
-    @GeneratedValue(strategy=GenerationType.IDENTITY, generator="seq_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "score_id", updatable = false, nullable = false)
     private Integer score_id;
 
