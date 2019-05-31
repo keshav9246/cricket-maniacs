@@ -28,6 +28,7 @@ public class ScoresService {
         int totalBowlingPoints = 0;
         int totalFieldingPoints = 0;
         int totalMatchScore = 0;
+        String wk = "Wicketkeeper";
 
         individualScore.setScore_id(++id);
         individualScore.setPlayer_name(playerName);
@@ -74,7 +75,7 @@ public class ScoresService {
         if (strikeRate >= 150 && runs >= 50) {
             batting_bonus += 10;
         }
-        if (strikeRate >= 175 && runs >= 7) {
+        if (strikeRate >= 175 && runs >= 70) {
             batting_bonus += 10;
         }
 
@@ -118,13 +119,14 @@ public class ScoresService {
         individualScore.setCatches(catches);
         individualScore.setDirect_hit(directHits);
 
-        if(role.contentEquals("Wicketkeeper"))
+        System.out.print(role);
+        if(role.equalsIgnoreCase(wk))
         {
-            catchPoints = catches * 7;
+            catchPoints = catches * 10;
         }
         else
         {
-            catchPoints = catches * 10;
+            catchPoints = catches * 7;
         }
 
         directHitPoints = directHits * 25;
