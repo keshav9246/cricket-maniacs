@@ -27,7 +27,7 @@
 WELCOME ${user.name} 
 <br><br> <br> <br> <br>
 
-
+    <a href = "./WEB_INF/jsp/scores.jsp" >SCORES</a>
 
 
 
@@ -90,14 +90,11 @@ WELCOME ${user.name}
             <td>  Purple Cap</td>
             <td colspan="3">  <c:out value="${maniac.purple_cap}"/></td>    
         </tr>
-        
-    
-    
-  
-
 </table>
-
-
 </div>
+
+
+
+
 </body>
 </html>

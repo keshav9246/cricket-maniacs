@@ -7,13 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestHeader;
 
+import javax.persistence.OrderBy;
 import java.util.List;
 
 @Service
 public class ManiacService {
 
     @Autowired
-    ManiacRepository repoInstance;
+    ManiacRepository repo;
 
     @Autowired
     Maniac team;
@@ -32,7 +33,7 @@ public class ManiacService {
         team.setTeam(players);
 
 
-        repoInstance.save(team);
+        repo.save(team);
 
 
     }
@@ -40,7 +41,7 @@ public class ManiacService {
     public List<Maniac> getAllManiacs()
     {
     	
-       friends = (List<Maniac>) repoInstance.findAll();
+       friends = (List<Maniac>) repo.findAll();
        
       
        return friends;
@@ -50,13 +51,13 @@ public class ManiacService {
 
     public Maniac getManiacTeam( String ManiacName)
     {
-        return repoInstance.findById(ManiacName).orElse(null);
+        return repo.findById(ManiacName).orElse(null);
     }
     
-    
+
     public Maniac getManiacScore( String ManiacName)
     {
-        team = repoInstance.findById(ManiacName).orElse(null);
+        team = repo.findById(ManiacName).orElse(null);
         return team;
     }
 

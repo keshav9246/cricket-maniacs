@@ -15,5 +15,4 @@ public interface ManiacRepository extends CrudRepository<Maniac, String> {
 
 
 
-
 }

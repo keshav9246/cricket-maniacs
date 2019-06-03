@@ -10,7 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import static java.util.Comparator.comparing;
 
 @Controller
 public class LoginController {
@@ -22,7 +25,7 @@ public class LoginController {
    private UserService service;
     
     @Autowired
-    private ManiacService mService;
+    private ManiacService maniac_service;
     
     @Autowired
     private Maniac maniac;
@@ -38,9 +41,12 @@ public class LoginController {
     	
         user = service.getUser(userid);
         
-        maniac = mService.getManiacScore(user.getName());
+        maniac = maniac_service.getManiacScore(user.getName());
         
-        friends = mService.getAllManiacs();
+        friends = maniac_service.getAllManiacs();
+
+
+        Collections.sort(friends, Comparator.comparing(Maniac::getTotal_score));
         
         ModelAndView model = null;
       

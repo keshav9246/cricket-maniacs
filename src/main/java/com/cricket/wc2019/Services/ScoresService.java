@@ -18,20 +18,28 @@ public class ScoresService {
 
     public Scores updateScores(int runs, int balls, boolean isNotOut, int wickets, float economy, int catches, String role, int directHits, String playerName, boolean isCaptain)
     {
-        System.out.println("----------------------ROLROLEROLE--------------------------------------- "+role);
+       // System.out.println("----------------------ROLROLEROLE--------------------------------------- "+role);
         int batting_bonus = 0;
         int bowling_bonus = 0;
         int totalBattingPoints = 0;
         int wicketPoints = 0;
         int catchPoints = 0;
         int directHitPoints = 0;
-        float strikeRate = (runs*100)/balls;
+        float strikeRate = 0;
         int totalBowlingPoints = 0;
         int totalFieldingPoints = 0;
         int totalMatchScore = 0;
         String wk = "Wicketkeeper";
 
-        System.out.println("----------------------ROLROLEROLE--------------------------------------- "+role+"="+wk);
+
+        if(balls!=0)
+        {
+            strikeRate = (runs*100)/balls;
+        }
+
+
+
+        //System.out.println("----------------------ROLROLEROLE--------------------------------------- "+role+"="+wk);
         individualScore.setScore_id(++id);
         individualScore.setPlayer_name(playerName);
         individualScore.setRuns(runs);

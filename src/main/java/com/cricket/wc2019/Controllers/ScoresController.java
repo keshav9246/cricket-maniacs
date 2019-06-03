@@ -61,7 +61,7 @@ public class ScoresController {
 //                score.getStrike_rate();
 //                score.getWickets();
 
-        ModelAndView mv = new ModelAndView("admin", "score", score);
+        ModelAndView mv = new ModelAndView("welcome", "scores", score);
             return mv;
 
 
