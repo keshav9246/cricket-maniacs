@@ -21,11 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
     <title>Cricket - Maniac</title>
-    <style>
-        .col.s6{
-            min-height: 40vh;
-        }
-    </style>
+
 
 </head>
 <body>
@@ -43,7 +39,7 @@
 
 
 
-            <a href="#" class="brand-logo left"><img  id="logo" src="./WEB_INF/img/logo5.png" width="60" height="64"/></a>
+            <a href="#" class="brand-logo left"><img  id="logo" src="./WEB_INF/img/logo5.png" width="60" height="auto"/></a>
 
         <a href="" class="brand-logo center white-text darken-4">Cricket Maniacs</a>
         <ul class="right">
@@ -56,17 +52,15 @@
 
 </header>
 
-
-
-
-
+    <div id = "container">
 
     <div class="row ">
 
-        <div id = "container">
 
-        <div class="col s6">
-            <h4>Aao Bhosdikey ${user.name}</h4>
+            <div class="col s12">
+
+
+                <h4>Aao Bhosdikey ${user.name}</h4>
             <div class="row">
                 <div class="col s12 m6">
                     <div class="card blue-grey darken-1">
@@ -82,29 +76,31 @@
 
 
 
-<table class="striped responsive-table">
-	
+<div class="row">
+    <div class="col s12">
+        <table class="responsive-table striped">
+            <thead>
+                <tr>
+                    <th>Maniac Name</th>
+                    <th>Maniac Score</th>
+                </tr>
+            </thead>
 
-    <thead>
-    <tr>
-        <th>Maniac Name</th>
-        <th>Maniac Score</th>
-    </tr>
-    </thead>
+            <tbody>
+            <c:forEach items="${friends}" var="maniac">
+                <tr>
+                    <td> <c:out value="${maniac.maniac_name}"/></td>
+                    <td>  <c:out value="${maniac.total_score}"/></td>
+                </tr>
+            </c:forEach>
+            </tbody>
 
-    <tbody>
-	<c:forEach items="${friends}" var="maniac">
-        <tr>
-            <td> <c:out value="${maniac.maniac_name}"/></td>
-            <td>  <c:out value="${maniac.total_score}"/></td>
-         
-        </tr>
-    </tbody>
-    </c:forEach>
-    </table>
-        </div>
+                    </table>
+                    </div>
+                </div>
+            </div>
 
-<div class="col s6 grey lighten-1">
+<div class="col s12 grey lighten-1">
 <table class="responsive-table striped">
 	
 
