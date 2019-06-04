@@ -35,14 +35,24 @@
 
 
 <div class="container">
- <header>
-        <nav class="nav-wraper">
-            <div class="container ">
+<header>
+    <nav class="nav-wraper deep-orange lighten-1 z-depth-5">
 
-                <a href="./WEB_INF/img/logo5.png" class="brand-logo black-text darken-4"><h5>Cricket Maniacs</h5></a>
-            </div>
-        </nav>
-  </header>
+			
+
+            <a href="#" class="brand-logo left"><img  id="logo" src="./WEB_INF/img/logo5.png" width="60" height="auto"/></a>
+
+
+        <a href="#" class="brand-logo center">Cricket Maniacs</a>
+        <ul class="right">
+                <li><a href="/scores" class="white-text darken-4">Scores</a></li>
+
+            </ul>
+
+
+    </nav>
+
+</header>
     <div class="row">
         <div class="col s6 teal lighten-2 ">
 

@@ -30,28 +30,33 @@
 
 
 
+
+
 <header>
     <nav class="nav-wraper deep-orange lighten-1 z-depth-5">
 
 
 
             <a href="#" class="brand-logo left"><img  id="logo" src="./WEB_INF/img/logo5.png" width="60" height="auto"/></a>
-
-        <a href="#" class="brand-logo center">Cricket Maniacs</a>
+	<a href="#" class="brand-logo center">Cricket Maniacs</a>
+        
         <ul class="right">
+        
                 <li><a href="/scores" class="white-text darken-4">Scores</a></li>
 
             </ul>
 
 
     </nav>
+    </header>
 
-</header>
+
+
 
 
 <div class = row>
 
-<div class="col s12 grey lighten-1">
+<div class="col s12">
 <table class="striped centered">
 	
 
