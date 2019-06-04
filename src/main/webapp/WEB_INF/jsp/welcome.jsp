@@ -27,23 +27,18 @@
 <body>
 <div class="container">
 
-<%--<c:set var="playerName" scope="session" value="${maniac.team[0].playername}"/>  --%>
-<%--<c:set var="user" scope="session" value="${user}"/> --%>
-<%--<c:if test="${playerName == null}">  --%>
-<%--   <jsp:forward page="selectSquad.jsp" >--%>
-<%--   	<jsp:param name="userid" value="${user}" />  --%>
-<%--   </jsp:forward>    --%>
-<%--</c:if> --%>
+
 <header>
     <nav class="nav-wraper deep-orange lighten-1 z-depth-5">
 
-
+			
 
             <a href="#" class="brand-logo left"><img  id="logo" src="./WEB_INF/img/logo5.png" width="60" height="auto"/></a>
 
-        <a href="" class="brand-logo center white-text darken-4">Cricket Maniacs</a>
+
+        <a href="#" class="brand-logo center">Cricket Maniacs</a>
         <ul class="right">
-                <li><a href="./WEB_INF/jsp/scores.jsp" class="white-text darken-4">Scores</a></li>
+                <li><a href="/scores" class="white-text darken-4">Scores</a></li>
 
             </ul>
 
@@ -60,7 +55,7 @@
             <div class="col s12">
 
 
-                <h4>Aao Bhosdikey ${user.name}</h4>
+                <h4>Aao ${user.name}</h4>
             <div class="row">
                 <div class="col s12 m6">
                     <div class="card blue-grey darken-1">
@@ -78,7 +73,7 @@
 
 <div class="row">
     <div class="col s12">
-        <table class="responsive-table striped">
+        <table class="striped">
             <thead>
                 <tr>
                     <th>Maniac Name</th>
@@ -101,7 +96,7 @@
             </div>
 
 <div class="col s12 grey lighten-1">
-<table class="responsive-table striped">
+<table class="striped">
 	
 
 

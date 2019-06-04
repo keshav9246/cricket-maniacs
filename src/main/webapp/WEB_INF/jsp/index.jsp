@@ -28,25 +28,30 @@
 </style>
 
 
-    <div class="container">
-        <nav class="nav-wraper">
-            <div class="container">
-
-                <a href="" class="brand-logo black-text darken-4">Cricket Maniacs</a>
-            </div>
-        </nav>
-    </div>
+  
 </head>
 <body>
 
 
 
 <div class="container">
+ 
+        <nav class="nav-wraper">
+            <div class="container ">
 
+                <a href="" class="brand-logo black-text darken-4">Cricket Maniacs</a>
+            </div>
+        </nav>
+  
     <div class="row">
         <div class="col s6 teal lighten-2 ">
 
-            <img src="./img/logo.png" alt="" class="responsive-img materialboxed">
+			
+			 <div class="valign offset-s4">
+            	<img src="./WEB_INF/img/logo5.png" alt="" class="responsive-img materialboxed center-align">
+             </div>
+        
+            
 
         </div>
 
