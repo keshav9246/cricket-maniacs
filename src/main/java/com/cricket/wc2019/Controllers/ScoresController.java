@@ -6,6 +6,7 @@ import com.cricket.wc2019.Services.PlayerService;
 import com.cricket.wc2019.Services.ScoresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -55,6 +56,12 @@ public class ScoresController {
 
 
     }
+//    
+//    public Model getScore(String playerName)
+//    {
+//    
+//    }
+    
 
     @GetMapping("/scores")
     public ModelAndView getScores()

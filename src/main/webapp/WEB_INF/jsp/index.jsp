@@ -35,14 +35,14 @@
 
 
 <div class="container">
- 
+ <header>
         <nav class="nav-wraper">
             <div class="container ">
 
-                <a href="" class="brand-logo black-text darken-4">Cricket Maniacs</a>
+                <a href="./WEB_INF/img/logo5.png" class="brand-logo black-text darken-4"><h5>Cricket Maniacs</h5></a>
             </div>
         </nav>
-  
+  </header>
     <div class="row">
         <div class="col s6 teal lighten-2 ">
 

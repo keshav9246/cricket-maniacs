@@ -15,9 +15,6 @@ public class Scores {
     @Column(name = "score_id", updatable = false, nullable = false)
     private Integer score_id;
 
-
-
-
     private String player_name;
     private int runs;
     private int balls;

@@ -103,9 +103,9 @@
     <thead>
     <tr>
         <th>Player Name</th>
-        <th>Player Role</th>
-        <th>Player Score</th>
-        <th>Player Country</th>
+        <th>Role</th>
+        <th>Score</th>
+        <th>Country</th>
     </tr>
     </thead>
 

@@ -52,7 +52,7 @@
 <div class = row>
 
 <div class="col s12 grey lighten-1">
-<table class="striped responsive-table centered">
+<table class="striped centered">
 	
 
 

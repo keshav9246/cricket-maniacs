@@ -137,8 +137,7 @@ public class ScoresService {
         repo.save(individualScore);
 
 
-        System.out.print(individualScore.getTotal_match_score());
-        System.out.print(individualScore.getScore_id() + "This is the IDDdddddddDd");
+
         return individualScore;
 
     }
